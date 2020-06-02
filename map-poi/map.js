@@ -37,6 +37,8 @@ function initMap() {
 
     const selectedLatLng = mapsMouseEvent.latLng;
 
+    // TODO: add a marker and a confirm button
+
     // add values to input & poi info
     inputPoi.value = `${selectedLatLng.lat()} ${selectedLatLng.lng()}`;
     infoPoi.querySelector('.lat').innerText = selectedLatLng.lat().toFixed(4);
