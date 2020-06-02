@@ -1,25 +1,40 @@
 <style>
-  #inputPoi {
+  #input-poi {
     border: 1px solid black;
   }
 
-  #map-poi {
-    display: none;
-    height: 800px;
-  }
-
-  #map-wapper {
+  #map-wrapper {
     width: 100%;
     height: 100%;
     display: none;
-    position: absolute;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
     z-index: 100;
     background-color: grey;
+    cursor: pointer;
+  }
+
+  #map-wrapper button {
+    width: 100px;
+    position: absolute;
+    top: 60px;
+    right: 0;
+  }
+
+  #map-poi {
+    width: 400px;
+    height: 400px;
   }
 </style>
 
-<input id="inputPoi" type="text" placeholder="submit POI">
+<input id="input-poi" type="text" placeholder="submit POI">
 <section id="map-wrapper">
+  <button>
+    <img src="https://www.materialui.co/materialIcons/navigation/close_black_1024x1024.png">
+  </button>
   <div id="map-poi" />
 </section>
 
