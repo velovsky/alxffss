@@ -1,6 +1,7 @@
 const inputPoi = window.document.getElementById('input-poi');
 const mapWrapper = window.document.getElementById('map-wrapper'); // access map component
 const mapDiv = window.document.getElementById('map-poi');
+const infoPoi = window.document.getElementById('info-poi');
 
 // map toggle
 inputPoi.onclick = () => {
@@ -17,11 +18,11 @@ mapDiv.onclick = () => {
 
 // MAP functions
 function initMap() {
-  const initLatlng = {lat: -25.363, lng: 131.044};
+  const initLatlng = {lat: 38.802210, lng: -77.043071}; // Alexandria
 
-  map = new google.maps.Map(mapDiv, {
+  let map = new google.maps.Map(mapDiv, {
         center: initLatlng,
-        zoom: 8
+        zoom: 14
       });
 
   // Create the initial InfoWindow.
@@ -36,8 +37,11 @@ function initMap() {
 
     const selectedLatLng = mapsMouseEvent.latLng;
 
-    // add values to input
+    // add values to input & poi info
     inputPoi.value = `${selectedLatLng.lat()} ${selectedLatLng.lng()}`;
+    infoPoi.querySelector('.lat').innerText = selectedLatLng.lat().toFixed(4);
+    infoPoi.querySelector('.lng').innerText = selectedLatLng.lng().toFixed(4);
+
     // close map window
     mapWrapper.style.display = 'none';
   });
