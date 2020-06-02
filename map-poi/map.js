@@ -6,10 +6,16 @@ const infoPoi = window.document.getElementById('info-poi');
 // map toggle
 inputPoi.onclick = () => {
   mapWrapper.style.display = 'flex';
+  document.body.style.overflow = 'hidden';
 };
 
-mapWrapper.onclick = () => {
+function closePopUp() {
+  document.body.style.overflow = '';
   mapWrapper.style.display = 'none';
+}
+
+mapWrapper.onclick = () => {
+  closePopUp();
 };
 
 mapDiv.onclick = () => {
@@ -45,6 +51,6 @@ function initMap() {
     infoPoi.querySelector('.lng').innerText = selectedLatLng.lng().toFixed(4);
 
     // close map window
-    mapWrapper.style.display = 'none';
+    closePopUp();
   });
 }
