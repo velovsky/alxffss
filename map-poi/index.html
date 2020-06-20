@@ -7,7 +7,8 @@
     font-weight: 800;
   }
 
-  #info-poi .lat, #info-poi .lng {
+  #info-poi .lat,
+  #info-poi .lng {
     margin-left: 5px;
   }
 
@@ -54,21 +55,26 @@
   }
 </style>
 
-<input id="input-poi" type="text" placeholder="submit POI">
+<input id="input-poi" type="text" placeholder="submit POI" />
 <section id="info-poi">
   <span class="header">LAT:</span><span class="lat"></span>
-  <br>
+  <br />
   <span class="header">LNG:</span><span class="lng"></span>
 </section>
 
 <section id="map-wrapper">
   <button class="close">
-    <img src="https://www.materialui.co/materialIcons/navigation/close_black_1024x1024.png">
+    <img
+      src="https://www.materialui.co/materialIcons/navigation/close_black_1024x1024.png"
+    />
   </button>
   <div id="map-poi"></div>
   <button class="submit" disabled>Submit</button>
 </section>
 
 <script src="./map.js" />
-<script src="https://maps.googleapis.com/maps/api/js?key=<API_KEY>&callback=initMap"
-    async defer></script>
+<script
+  src="https://maps.googleapis.com/maps/api/js?key=<API_KEY>&callback=initMap"
+  async
+  defer
+></script>
